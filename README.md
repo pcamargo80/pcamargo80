@@ -1,105 +1,155 @@
 # Pablo Camargo
 
-Platform Engineer | DevOps | Cloud Infrastructure | AI Automation | Flutter
+**Platform Engineer | DevOps | Cloud Infrastructure | AI Automation | Flutter**
 
-Diseño y construyo plataformas completas que integran infraestructura, observabilidad, automatización, APIs y aplicaciones móviles.
+I design and build self-hosted platforms that combine infrastructure, observability, automation, backend services, and mobile applications.
 
-## Tecnologías
-
-### Cloud & DevOps
-
-* Docker
-* Traefik
-* Cloudflare
-* GitHub Actions
-* Linux
-* PostgreSQL
-
-### Observabilidad
-
-* Grafana
-* Prometheus
-* Loki
-* Promtail
-* Uptime Kuma
-
-### Backend
-
-* Node.js
-* TypeScript
-* Fastify
-* Prisma
-
-### Mobile
-
-* Flutter
-* Riverpod
-* Hive
-* Material 3
-
-### Automatización
-
-* n8n
-* Python
-* AI Workflows
+My current focus is **KINVIA**, a personal platform used to validate production-like architecture patterns with Docker, Cloudflare Tunnel, Traefik, Authelia, observability tooling, backend services, and Flutter apps.
 
 ---
 
-## Proyectos Destacados
+## Current Focus
+
+- Building the **KINVIA Platform** as a self-hosted homelab and SaaS foundation.
+- Improving infrastructure security and service exposure with Cloudflare, Traefik, and Authelia.
+- Implementing observability with Grafana, Prometheus, Loki, Node Exporter, cAdvisor, Promtail, and Uptime Kuma.
+- Developing Flutter apps with offline-first architecture.
+- Designing automation workflows with n8n, Python, and AI-assisted processes.
+
+---
+
+## Featured Project
 
 ### KINVIA Platform
 
-Plataforma integral compuesta por:
+KINVIA Platform is a self-hosted platform built on Fedora Server using Docker and Docker Compose.
 
-* Infraestructura self-hosted
-* Observabilidad completa
-* API backend
-* Aplicaciones móviles
-* Automatización
-* Landing pública
+The public edge architecture follows this flow:
 
-Tecnologías:
+```text
+Internet
+  ↓
+Cloudflare DNS / Proxy
+  ↓
+Cloudflare Tunnel
+  ↓
+Traefik Reverse Proxy
+  ↓
+Authelia Forward Auth
+  ↓
+Docker Services
+```
 
-Docker • Cloudflare Tunnel • Traefik • Authelia • PostgreSQL • Fastify • Prisma • Grafana • Prometheus
+Core services include:
 
----
+- Public landing page: `kinvia.dev`
+- Authentication layer: Authelia
+- Reverse proxy: Traefik
+- Observability: Grafana, Prometheus, Loki, Promtail
+- Host and container metrics: Node Exporter, cAdvisor
+- Availability monitoring: Uptime Kuma
+- Automation foundation: n8n
+- SaaS foundation: PostgreSQL and Redis on the internal Docker network
 
-### KINVIA Student
+Repository:
 
-Aplicación móvil offline-first para organización académica.
-
-* Flutter
-* Riverpod
-* Hive
-* Material 3
-
----
-
-### KINVIA Finance
-
-Aplicación de finanzas personales con almacenamiento local y reportes.
-
-* Flutter
-* Riverpod
-* Hive
-* Local Notifications
+- [kinvia-platform-showcase](https://github.com/pcamargo80/kinvia-platform-showcase)
 
 ---
 
-### Monitor Helps
+## Technical Stack
 
-Sistema de monitoreo remoto por SSH con generación automática de reportes HTML y alertas.
+### Infrastructure & DevOps
 
-* Python
-* Paramiko
-* YAML
-* Linux Monitoring
+- Fedora Server
+- Linux
+- Docker
+- Docker Compose
+- Traefik
+- Cloudflare Tunnel
+- Cloudflare DNS / Proxy
+- Authelia
+- Nginx
+
+### Observability
+
+- Grafana
+- Prometheus
+- Loki
+- Promtail
+- Node Exporter
+- cAdvisor
+- Uptime Kuma
+
+### Backend
+
+- Node.js
+- TypeScript
+- Fastify
+- Prisma
+- PostgreSQL
+- Redis
+
+### Mobile
+
+- Flutter
+- Dart
+- Riverpod
+- Hive
+- Material 3
+- Offline-first architecture
+
+### Automation
+
+- n8n
+- Python
+- AI workflows
+- Monitoring scripts
+- Operational reports
 
 ---
 
-## Actualmente
+## Project Areas
 
-* Construyendo la plataforma KINVIA
-* Automatizando procesos con IA
-* Mejorando infraestructura self-hosted
-* Explorando Kubernetes y plataformas cloud-native
+### Platform Engineering
+
+- [KINVIA Platform Showcase](https://github.com/pcamargo80/kinvia-platform-showcase)
+- KINVIA Homelab
+- KINVIA API
+- KINVIA Site
+
+### Mobile Applications
+
+- KINVIA Student
+- KINVIA Home
+- KINVIA Finance
+- KINVIA Control
+
+### Automation & Operations
+
+- Monitor Helps
+- QR generation tools
+- Requirements control tools
+- Operational reporting tools
+
+---
+
+## Engineering Principles
+
+- Keep public services minimal and intentional.
+- Protect internal observability and admin services.
+- Prefer internal Docker networking for databases and infrastructure dependencies.
+- Document architecture decisions clearly.
+- Build small, functional MVPs before adding complexity.
+- Avoid exposing secrets, internal IPs, credentials, or sensitive runtime configuration.
+
+---
+
+## Currently Building
+
+- KINVIA SaaS backend foundation
+- API service exposure through `api.kinvia.dev`
+- Future app surface through `app.kinvia.dev`
+- Reduced attack surface for observability services
+- CI/CD roadmap with GitHub Actions
+- Additional automation workflows with n8n and AI
